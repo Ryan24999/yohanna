@@ -1,104 +1,63 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Feliz Aniversário, Nathalia</title>
-  <style>
-    body {
-      background: linear-gradient(to bottom right, #ffe6f0, #ffe9f9);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #4b2c36;
-      margin: 0;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-    }
-    h1 {
-      color: #d63384;
-      font-size: 2.5em;
-      margin-top: 20px;
-      text-align: center;
-    }
-    .card {
-      background: #ffffffcc;
-      border-radius: 20px;
-      padding: 30px;
-      max-width: 800px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      text-align: center;
-      margin-bottom: 30px;
-      line-height: 1.6;
-      font-size: 1.2em;
-    }
-    img.top-image {
-      max-width: 300px;
-      border-radius: 20px;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    }
-    .footer {
-      margin-top: 20px;
-      font-style: italic;
-      font-size: 1.2em;
-      color: #6d3e50;
-    }
-    .video-container {
-      position: relative;
-      width: 100%;
-      max-width: 800px;
-      padding-bottom: 56.25%;
-      height: 0;
-      margin-bottom: 40px;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    }
-    .video-container iframe {
-      position: absolute;
-      top:0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-      border-radius: 15px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Namoro</title>
+    <style>
+        body {
+            background-color: #ffcccc;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        h1 {
+            color: #ff3366;
+        }
+
+        .heart {
+            font-size: 50px;
+            color: #ff3366;
+            cursor: pointer;
+        }
+
+        #nao {
+            font-size: 24px;
+            color: #333;
+            background-color: #ffcccc;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <h1>Um Pedido de Namoro Especial</h1>
+        <p>Olá amor ❤️,</p>
+        <p>Quero dizer que você ilumina minha vida como ninguém mais.</p>
+        <p>Você aceita namorar comigo?</p>
+        <p class="heart" onclick="mostrarResposta()">❤️</p>
+        <button id="nao" onmouseover="mudarPosicao()">Não</button>
+        <p id="resposta" style="display: none;"></p>
+    </div>
+    <script>
+        function mostrarResposta() {
+            document.getElementById('resposta').style.display = 'block';
+            document.getElementById('resposta').innerHTML = 'Sim! Eu aceito, meu amor. ❤️';
+        }
 
-  <img
-    class="top-image"
-    src="https://i.imgur.com/pIVKuJd.jpeg"
-    alt="Imagem fofinha para Nathalia"
-  />
-
-  <h1>Feliz Aniversário, Nathalia! 🎂💖</h1>
-
-  <div class="card">
-    <p>Oii meu amor, mais 1 aninho de vida hoje né? Uma data maravilhosa e incrível. Acho que pessoas boas deveriam viver muitos e muitos anos, se isso acontecesse, acho que sua vida seria eterna.</p>
-    <p>Tá ficando mais velhinha, mas continua uma menina tão pura, com olhar tão brilhante, com um toque de inocência tão bonito, que eu admiro tanto tudo que ti passa e mesmo assim continua essa pessoa alegre e maravilhosa que ti é.</p>
-    <p>Alguém esperançoso, que sempre espera tudo de bom dos outros, que tenta sempre ver o lado bom das coisas, que vive com um coração explodindo de amor para distribuir para tudo (principalmente para mim) e isto resume o que você é.</p>
-    <p>Eu amo tudo em você, seus cabelos ondulados, seus olhos chocolates, suas bochechas redondinhas, sua boca tão carnuda, seu tamanho tão pitico, sua voz tão doce e seu acolhimento tão aconchegante, tudo em ti é admirável, é como uma obra de arte atemporal e feita para mim.</p>
-    <p>Seu modo de agir, ver, sentir, desperta o melhor de mim. Você é incrível em sua essência, e espero que nada nem ninguém nunca mude isso, que você continue sempre sendo maravilhosa como sempre foi desde que te conheço.</p>
-    <p>Prometo que mesmo sendo cruel às vezes a vida vai te recompensar em boas partes, e eu espero sempre estar contigo nos seus momentos bons, ruins, difíceis ou felizes, pra te acolher de qualquer coisa e de qualquer um no intuito de te fazer bem.</p>
-    <p>Você é uma pessoa maravilhosa, Nathalia, uma das melhores que já passou em minha vida e sempre vai estar no meu coração. Desejo muitos e muitos anos de vidas felizes e comigo na sua vida. Feliz aniversário momo 🎂💘</p>
-  </div>
-
-  <div class="video-container">
-    <iframe
-      src="https://www.youtube.com/embed/W_SKPs4XbPw?controls=1"
-      title="Vídeo do YouTube"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>
-  </div>
-
-  <div class="footer">
-    Com amor, Ryan ❤
-  </div>
-
+        function mudarPosicao() {
+            const buttonNao = document.getElementById('nao');
+            const randomX = Math.floor(Math.random() * window.innerWidth);
+            const randomY = Math.floor(Math.random() * window.innerHeight);
+            buttonNao.style.left = `${randomX}px`;
+            buttonNao.style.top = `${randomY}px`;
+        }
+    </script>
 </body>
 </html>
