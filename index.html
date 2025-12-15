@@ -10,11 +10,13 @@
             background-color: #ffcccc;
             text-align: center;
             font-family: Arial, sans-serif;
+            overflow: hidden;
         }
 
         .container {
             padding: 20px;
             position: relative;
+            z-index: 2;
         }
 
         h1 {
@@ -47,10 +49,36 @@
             color: #ff3366;
             display: none;
         }
+
+        /* CORAÇÕES */
+        .heart {
+            position: fixed;
+            bottom: -20px;
+            font-size: 24px;
+            animation: subir 6s linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes subir {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 
 <body>
+
+    <!-- MÚSICA -->
+    <audio id="musica">
+        <source src="https://files.catbox.moe/9a6k7y.mp3" type="audio/mpeg">
+    </audio>
+
     <div class="container">
         <h1>Um Pedido de Namoro Especial</h1>
 
@@ -61,12 +89,19 @@
         <button id="sim" onclick="mostrarResposta()">Sim</button>
         <button id="nao" onmouseover="mudarPosicao()">Não</button>
 
-        <p id="resposta">Sim! Eu aceito. </p>
+        <p id="resposta">Sim! Eu aceito meu Ryan gostoso </p>
     </div>
 
     <script>
         function mostrarResposta() {
             document.getElementById("resposta").style.display = "block";
+
+            // tocar música
+            const musica = document.getElementById("musica");
+            musica.play();
+
+            // iniciar corações
+            setInterval(criarCoracao, 300);
         }
 
         function mudarPosicao() {
@@ -78,6 +113,23 @@
             nao.style.left = x + "px";
             nao.style.top = y + "px";
         }
+
+        function criarCoracao() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
+
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = (20 + Math.random() * 20) + "px";
+            heart.style.animationDuration = (4 + Math.random() * 3) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 7000);
+        }
     </script>
+
 </body>
 </html>
