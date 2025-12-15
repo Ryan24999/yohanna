@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pedido de Namoro</title>
+
     <style>
         body {
             background-color: #ffcccc;
@@ -13,50 +14,69 @@
 
         .container {
             padding: 20px;
+            position: relative;
         }
 
         h1 {
             color: #ff3366;
         }
 
-        .heart {
-            font-size: 50px;
-            color: #ff3366;
+        button {
+            font-size: 22px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: none;
             cursor: pointer;
+        }
+
+        #sim {
+            background-color: #ff3366;
+            color: white;
+            margin-right: 20px;
         }
 
         #nao {
-            font-size: 24px;
+            background-color: #ffe6e6;
             color: #333;
-            background-color: #ffcccc;
-            border: none;
-            cursor: pointer;
             position: absolute;
+        }
+
+        #resposta {
+            margin-top: 30px;
+            font-size: 26px;
+            color: #ff3366;
+            display: none;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>Um Pedido de Namoro Especial</h1>
-        <p>Olá amor ❤️,</p>
-        <p>Quero dizer que você ilumina minha vida como ninguém mais.</p>
+
+        <p>Olá amor </p>
+        <p>Você é uma pessoa maravilhosa, além de gostosa e especial ❤️</p>
         <p>Você aceita namorar comigo?</p>
-        <p class="heart" onclick="mostrarResposta()">❤️</p>
+
+        <button id="sim" onclick="mostrarResposta()">Sim</button>
         <button id="nao" onmouseover="mudarPosicao()">Não</button>
-        <p id="resposta" style="display: none;"></p>
+
+        <p id="resposta">Sim! Eu aceito. </p>
     </div>
+
     <script>
         function mostrarResposta() {
-            document.getElementById('resposta').style.display = 'block';
-            document.getElementById('resposta').innerHTML = 'Sim! Eu aceito, meu amor. ❤️';
+            document.getElementById("resposta").style.display = "block";
         }
 
         function mudarPosicao() {
-            const buttonNao = document.getElementById('nao');
-            const randomX = Math.floor(Math.random() * window.innerWidth);
-            const randomY = Math.floor(Math.random() * window.innerHeight);
-            buttonNao.style.left = `${randomX}px`;
-            buttonNao.style.top = `${randomY}px`;
+            const nao = document.getElementById("nao");
+
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+
+            nao.style.left = x + "px";
+            nao.style.top = y + "px";
         }
     </script>
 </body>
